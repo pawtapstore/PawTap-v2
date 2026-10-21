@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- EDIT: pet name in the page title -->
+<title>PET NAME - please help me get home</title>
+<meta name="robots" content="noindex">
+<style>
+  :root {
+    --bg: #eef3f5;
+    --card: #ffffff;
+    --ink: #10222b;
+    --muted: #546a75;
+    --line: #d3dee3;
+    --call: #0b6e4f;
+    --call-ink: #ffffff;
+    --alert: #f2b705;
+    --alert-ink: #2a2000;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0d1a20;
+      --card: #15262e;
+      --ink: #eaf2f5;
+      --muted: #9db3bd;
+      --line: #2a3f49;
+      --call: #2fb184;
+      --call-ink: #04140e;
+      --alert: #f2b705;
+      --alert-ink: #2a2000;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: ui-rounded, "SF Pro Rounded", "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+    font-size: 18px;
+    line-height: 1.5;
+  }
+  main {
+    max-width: 30rem;
+    margin: 0 auto;
+    padding: 1rem 1rem 2rem;
+  }
+
+  /* Lost-mode banner: shown only when <body data-lost="true"> */
+  .lost { display: none; }
+  body[data-lost="true"] .lost {
+    display: block;
+    background: var(--alert);
+    color: var(--alert-ink);
+    font-weight: 700;
+    font-size: 1.15rem;
+    text-align: center;
+    padding: 0.9rem 1rem;
+    border-radius: 14px;
+    margin-bottom: 1rem;
+  }
+
+  .photo {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 24px;
+    background: var(--line);
+    display: block;
+  }
+
+  h1 {
+    font-size: 2.4rem;
+    line-height: 1.1;
+    margin: 1.1rem 0 0.25rem;
+    letter-spacing: -0.01em;
+  }
+  .lead {
+    margin: 0 0 1.25rem;
+    color: var(--muted);
+  }
+
+  .actions { display: grid; gap: 0.75rem; margin-bottom: 1.75rem; }
+  .btn {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.25rem;
+    padding: 1.05rem 1rem;
+    border-radius: 16px;
+    border: 2px solid var(--call);
+  }
+  .btn.primary { background: var(--call); color: var(--call-ink); }
+  .btn.secondary { background: transparent; color: var(--ink); border-color: var(--line); font-size: 1.05rem; padding: 0.85rem 1rem; }
+  .btn:focus-visible { outline: 3px solid var(--ink); outline-offset: 3px; }
+
+  h2 { font-size: 1.1rem; margin: 0 0 0.5rem; }
+  dl {
+    margin: 0;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 0.25rem 1rem;
+  }
+  .row { padding: 0.7rem 0; border-bottom: 1px solid var(--line); }
+  .row:last-child { border-bottom: 0; }
+  dt { color: var(--muted); font-size: 0.9rem; }
+  dd { margin: 0; font-weight: 600; }
+
+  footer { margin-top: 1.5rem; color: var(--muted); font-size: 0.85rem; text-align: center; }
+</style>
+</head>
+
+<!-- EDIT: change data-lost to "true" when your pet is missing, "false" when found -->
+<body data-lost="false">
+<main>
+
+  <div class="lost" role="alert">
+    I'm lost! Please call my owner right now.
+  </div>
+
+  <!-- EDIT: put a photo called photo.jpg in the same folder as this file -->
+  <img class="photo" src="photo.jpg" alt="Photo of PET NAME" onerror="this.style.display='none'">
+
+  <!-- EDIT: pet name -->
+  <h1>PET NAME</h1>
+  <p class="lead">If you found me, please call my owner. Thank you for helping me get home.</p>
+
+  <div class="actions">
+    <!-- EDIT: replace +000000000000 with your number, with country code, no spaces -->
+    <a class="btn primary" href="tel:+000000000000">Call my owner</a>
+    <a class="btn secondary" href="sms:+000000000000">Send a text message</a>
+  </div>
+
+  <section>
+    <h2>About me</h2>
+    <dl>
+      <!-- EDIT or delete any rows below -->
+      <div class="row"><dt>Owner</dt><dd>OWNER FIRST NAME</dd></div>
+      <div class="row"><dt>Breed and colour</dt><dd>BREED, COLOUR</dd></div>
+      <div class="row"><dt>Medical needs</dt><dd>None</dd></div>
+      <div class="row"><dt>Vet</dt><dd>VET NAME AND PHONE</dd></div>
+      <div class="row"><dt>Notes</dt><dd>Friendly, but may be nervous around strangers.</dd></div>
+    </dl>
+  </section>
+
+  <footer>Scanned from my collar tag.</footer>
+
+</main>
+</body>
+</html>
